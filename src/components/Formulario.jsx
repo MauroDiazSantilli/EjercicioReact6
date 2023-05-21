@@ -33,7 +33,7 @@ function Colores() {
     <div className="recuadroColor"></div>
     <Form.Control
       type="text"
-      placeholder="Ingrese un color. Ej: Verde "
+      placeholder="Ingrese un color. Ej: Verde"
       className="w-100 ms-3"
       value={color}
       onChange={handleChange}
