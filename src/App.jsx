@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-    
+    <section className='container'>
     <Colores/>
-    
+    </section>
     </>
   )
 }

@@ -24,10 +24,10 @@ function Colores() {
   }, []);
 
   return (
-    <Container className='border my-5 p-5 shadow'>
+    <Container className='border my-5 p-5 shadow row justify-content-center justify-content-md-between'>
       <p>Administrar colores</p>
       <Form onSubmit={handleSubmit}>
-        <Container className='bg-info p-4 d-flex align-items-center shadow-sm'>
+        <Container className='bg-info p-4 d-flex align-items-center'>
           <img src="" alt="Color elegido" className="me-2" />
           <Form.Group className="mb-0">
             <Form.Control
@@ -38,9 +38,11 @@ function Colores() {
             />
           </Form.Group>
         </Container>
-        <Button variant="primary" type="submit" className='mt-3 shadow-sm'>
+        <div className="d-flex justify-content-end">
+        <Button variant="primary" type="submit" className='mt-3'>
           Guardar
         </Button>
+        </div>
       </Form>
     </Container>
   );
