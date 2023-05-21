@@ -34,7 +34,7 @@ function Colores() {
     <Form.Control
       type="text"
       placeholder="Ingrese un color. Ej: Verde"
-      className="w-100 ms-3"
+      className="w-75 ms-3"
       value={color}
       onChange={handleChange}
     />
