@@ -7,15 +7,17 @@ background-color: #FFFFFF;
 
 }
 
-.contendor{
-  border-radius:5px ;
-  box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
+.contenedorColor{
+  border-radius:10px ;
+  box-shadow: 0px 5px 10px 3px grey
 }
-.caja{
+.recuadroColor{
+  background-color: goldenrod;
   height: 100px;
   width: 100px;
-  background-color: blue;
+  
 }
+
 .boton{
-  right: 10px;
+  box-shadow: 0px 5px 10px 3px grey
 }
