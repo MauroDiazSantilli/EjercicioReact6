@@ -1,8 +1,12 @@
 import { Button, Card, Col } from 'react-bootstrap';
 
-const ColoresCard = ({ color }) => {
+const ColoresCard = ({ color, onDelete }) => {
   const style = {
     backgroundColor: color.toLowerCase(),
+  };
+
+  const handleDelete = () => {
+    onDelete(color);
   };
 
   return (
@@ -15,7 +19,7 @@ const ColoresCard = ({ color }) => {
           </div>
           <hr />
           <div className="d-flex justify-content-end">
-            <Button variant="danger" className="my-1 boton">
+            <Button variant="danger" className="my-1 boton" onClick={handleDelete}>
               Borrar
             </Button>
           </div>

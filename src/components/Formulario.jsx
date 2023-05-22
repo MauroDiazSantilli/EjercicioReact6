@@ -1,10 +1,22 @@
 import { Button, Form, Container, Row } from 'react-bootstrap';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ColoresCard from './Cards';
 
 function Colores() {
   const [color, setColor] = useState('');
   const [coloresGuardados, setColoresGuardados] = useState([]);
+
+  useEffect(() => {
+    const coloresGuardadosJSON = localStorage.getItem('coloresGuardados');
+    if (coloresGuardadosJSON) {
+      const coloresGuardadosArray = JSON.parse(coloresGuardadosJSON);
+      setColoresGuardados(coloresGuardadosArray);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('coloresGuardados', JSON.stringify(coloresGuardados));
+  }, [coloresGuardados]);
 
   const handleChange = (e) => {
     setColor(e.target.value);
@@ -18,6 +30,11 @@ function Colores() {
     }
   };
 
+  const handleDelete = (color) => {
+    const noColor = coloresGuardados.filter((item) => item !== color);
+    setColoresGuardados(noColor);
+  };
+
   return (
     <Container className="row justify-content-center justify-content-md-between">
       <Container className="my-5 p-0 contenedorColor">
@@ -27,7 +44,7 @@ function Colores() {
             <div className="recuadroColor"></div>
             <Form.Control
               type="text"
-              placeholder="Ingrese el nombre de un color en ingles. Ej: Crimson"
+              placeholder="Ingrese el nombre de un color en inglés. Ej: Crimson"
               className="w-75 ms-3"
               value={color}
               onChange={handleChange}
@@ -42,10 +59,11 @@ function Colores() {
       </Container>
       <Row>
         {coloresGuardados.map((colorGuardado, index) => (
-          <ColoresCard key={index} color={colorGuardado} />
+          <ColoresCard key={index} color={colorGuardado} onDelete={handleDelete} />
         ))}
       </Row>
     </Container>
   );
 }
+
 export default Colores;
