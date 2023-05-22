@@ -1,13 +1,17 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col } from 'react-bootstrap';
 
-const ColoresCard = () => {
+const ColoresCard = ({ color }) => {
+  const style = {
+    backgroundColor: color.toLowerCase(),
+  };
+
   return (
     <Col md={4} className="mb-3">
       <Card className="text-center w-auto contenedorColor">
         <Card.Body>
-          <Card.Title className="pb-3">Nombre color</Card.Title>
+          <Card.Title className="pb-3">{color}</Card.Title>
           <div className="d-flex justify-content-center">
-            <div className="recuadroColor"></div>
+            <div className="recuadroColor" style={style}></div>
           </div>
           <hr />
           <div className="d-flex justify-content-end">

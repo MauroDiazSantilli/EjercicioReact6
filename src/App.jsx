@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <section className='container'>
-    <Colores/>
+    <Colores titulo="Administrar colores"/>
     </section>
     </>
   )
